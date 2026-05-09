@@ -24,15 +24,16 @@ CITY=st.sidebar.selectbox("Enter the city:",city,key=city)
 
 if st.button("Predict"):
     columns=["POSTED_BY","BHK_NO.","BHK_OR_RK","SQUARE_FT","CITY"]
-    data=[[POSTED_BY,BHK_NO,BHK_OR_RK,SQUARE_FT,CITY]]
-    st.write("You Provide Following Info:")
-    st.write("1.POSTED_BY:",POSTED_BY)
-    st.write("2.BHK_OR_RK:",BHK_OR_RK)
-    st.write("3.NO_Of BHK/Rk:",BHK_NO)
-    st.write("4.SQUARE_FT:",SQUARE_FT)
-    st.write("5.CITY:",CITY)
-    myinput=pd.DataFrame(data=data,columns=columns)
+    # data=[[POSTED_BY,BHK_NO,BHK_OR_RK,SQUARE_FT,CITY]]
+    # st.write("You Provide Following Info:")
+    # st.write("1.POSTED_BY:",POSTED_BY)
+    # st.write("2.BHK_OR_RK:",BHK_OR_RK)
+    # st.write("3.NO_Of BHK/Rk:",BHK_NO)
+    # st.write("4.SQUARE_FT:",SQUARE_FT)
+    # st.write("5.CITY:",CITY)
+    myinput=pd.DataFrame([[POSTED_BY,int(BHK_NO),BHK_OR_RK,int(SQUARE_FT),CITY]],columns=columns)
     result=model.predict(myinput)
+    st.success(f'The predicted price is:{np.round(result[0],2)}')
     Price=st.write("Predicted Price of the house is:",result[0,0])
-    st.write("(Price in lacs Only)",Price)
+    st.write("(Above Price are in lakh )",Price)
     
