@@ -23,7 +23,7 @@ A Machine Learning web application that predicts house prices based on features 
 - requirements.txt: List of dependencies for cloud deployment.
 
 ## 🔧 How to run locally
-1. Clone the repo: git clone https://github.com/YOUR_USERNAME/House-Price-Prediction-ML.git
+1. Clone the repo: git clone https://github.com/PruthvirajChavan8208/House-Price-Prediction-ML.git
 2. Install dependencies: pip install -r requirements.txt
 3. Run the app: streamlit run app2.py
 
